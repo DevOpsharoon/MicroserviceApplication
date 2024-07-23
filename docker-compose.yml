@@ -1,0 +1,83 @@
+version: "3"
+
+ 
+
+services:
+
+  server1:
+
+    build:
+
+      context: ./microservice1
+
+      dockerfile: Dockerfile
+
+    ports:
+
+      - "3000:3000"
+
+    volumes:
+
+      - ./microservice1:/app
+
+    command: npm start
+
+ 
+
+  server2:
+
+    build:
+
+      context: ./microservice2
+
+      dockerfile: Dockerfile
+
+    ports:
+
+      - "3001:3001"
+
+    volumes:
+
+      - ./microservice2:/app
+
+    command: npm start
+
+ 
+
+  server3:
+
+    build:
+
+      context: ./microservice3
+
+      dockerfile: Dockerfile
+
+    ports:
+
+      - "3002:3002"
+
+    volumes:
+
+      - ./microservice3:/app
+
+    command: npm start
+
+ 
+
+  server4:
+
+    build:
+
+      context: ./microservice4
+
+      dockerfile: Dockerfile
+
+    ports:
+
+      - "3003:3003"
+
+    volumes:
+
+      - ./microservice4:/app
+
+    command: npm start
